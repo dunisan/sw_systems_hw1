@@ -13,6 +13,7 @@ int main(){
     }
     printf("\n");
     
+    
     printf("The Palindromes are:");
     for(i=num1;i<=num2;i++){
         if(isPalindrome(i))
