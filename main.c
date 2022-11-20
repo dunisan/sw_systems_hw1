@@ -6,21 +6,21 @@ int main(){
 
     scanf("%d %d", &num1, &num2);
     
-    printf("The Armstorng numbers are:");
+    printf("The Armstrong numbers are:");
     for(i=num1;i<=num2;i++){
         if(isArmstrong(i))
             printf(" %d", i);
     }
     printf("\n");
     
-    printf("The Palindrome numbers are:");
+    printf("The Palindromes are:");
     for(i=num1;i<=num2;i++){
         if(isPalindrome(i))
             printf(" %d", i);
     }
     printf("\n");
 
-    printf("The prime numbers are:");
+    printf("The Prime numbers are:");
     for(i=num1;i<=num2;i++){
         if(isPrime(i))
             printf(" %d", i); 
