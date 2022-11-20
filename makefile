@@ -1,20 +1,21 @@
+
 CC = gcc
 FLAGS = -Wall
 LDFLAGS = -shared
 REC_SOURCES = basicClassification.o advancedClassificationRecursion.o
 LOOP_SOURCES = basicClassification.o advancedClassificationLoop.o
+SRCS = basicClassification.o advancedClassificationRecursion.o advancedClassificationLoop.o
+OBJS = $(SRCS:.c=.o)
 
-
-all:  maindloop maindrec mains  
-
-
-mains: main.o recursives
+all:  maindloop maindrec mains loops
+	
+mains: main.o libclassrec.a
 	$(CC) $(FLAGS) -o $@ $< libclassrec.a -lm
 	
-maindloop: main.o loopd
-	$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so  -lm
+maindloop: main.o libclassloops.so
+	$(CC) $(FLAGS) main.o ./libclassloops.so -o maindloop   -lm
 	
-maindrec: main.o recursived
+maindrec: main.o libclassrec.so
 	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so -lm
 
 libclassloops.a: $(LOOP_SOURCES)
@@ -35,7 +36,9 @@ libclassloops.so:$(LOOP_SOURCES)
 	$(CC) -shared -o $@ $+ 
 loopd: libclassloops.so
 
+%.o: %.c Numclass.h
+	$(CC) -Wall -c $< -o $@
+    
 clean: 
 	rm *.o *.so *.a maindloop maindrec mains
 	
-
