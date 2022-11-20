@@ -10,25 +10,21 @@ int main(){
     for(i=num1;i<=num2;i++){
         if(isArmstrong(i))
             printf(" %d", i);
-    }
-    printf("\n");
+    }    
     
-    
-    printf("The Palindromes are:");
+    printf("\nThe Palindromes are:");
     for(i=num1;i<=num2;i++){
         if(isPalindrome(i))
             printf(" %d", i);
     }
-    printf("\n");
 
-    printf("The Prime numbers are:");
+    printf("\nThe Prime numbers are:");
     for(i=num1;i<=num2;i++){
         if(isPrime(i))
             printf(" %d", i); 
     }
-    printf("\n");
     
-    printf("The Strong numbers are:");
+    printf("\The Strong numbers are:");
     for(i=num1;i<=num2;i++){
         if(isStrong(i))
             printf(" %d", i);
