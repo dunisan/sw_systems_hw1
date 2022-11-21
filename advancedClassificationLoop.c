@@ -1,14 +1,15 @@
 #include "NumClass.h"
 
 
+// will return boolean expression (0/1) if the number is palindrome.
 
 int isPalindrome(long int num){
     int start,end; 
     long int temp = num; 
-    char palind[100]; // Abuffer to change the number to a srting
-    int index = 0; // Index fo buffer 
+    char palind[100]; // A buffer to change the number to a string
+    int index = 0; // Index for buffer 
 
-    //convert the digit to cahr and put them into the buffer
+    //convert the digit to char and put them into the buffer
     while(temp!=0){
         palind[index++] = temp%10 + '0';
         temp=temp/10; 
@@ -20,6 +21,7 @@ int isPalindrome(long int num){
             return 0;
     }
     return 1;
+    // runtime O(n)
 }
 
 
@@ -45,7 +47,7 @@ int isArmstrong(int num){
     else    
         return 0;
 }
-
+// returns the length of a number
 int lengthIs(int num){
     int count=0; 
     while(num!=0){  
