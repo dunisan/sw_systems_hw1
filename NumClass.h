@@ -19,8 +19,11 @@ int isPrime();
 145= !5+ !4+ !1 I*/
 int isStrong();
 
+/* Will return the factorial of a number
 int factorial(int r);
 
+/* return the length of a number (123 = 3, 858738 = 6)
 int lengthIs(int num);
 
+/*will return the power of num
 int power(int num, int length);
