@@ -1,6 +1,7 @@
 #include "NumClass.h"
 
 
+
 //isStrong basic function.
 int isStrong(int num){
     int temp = num; 
