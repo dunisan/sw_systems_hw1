@@ -33,7 +33,7 @@ libclassrec.so: $(REC_SOURCES)
 recursived: libclassrec.so
 
 libclassloops.so:$(LOOP_SOURCES)
-	$(CC)  -shared -fPic -o $@ $+ -lm
+	$(CC)  -shared -fPIC -o $@ $+ -lm
 loopd: libclassloops.so
 
 %.o: %.c Numclass.h
