@@ -29,11 +29,11 @@ libclassrec.a: $(REC_SOURCES)
 recursives: libclassrec.a
 
 libclassrec.so: $(REC_SOURCES)
-	$(CC) -shared -fPIC -o $@ $+
+	$(CC) -fPIC -shared  -o $@ $+
 recursived: libclassrec.so
 
 libclassloops.so:$(LOOP_SOURCES)
-	$(CC) -shared -fPic -o $@ $+ 
+	$(CC) -fPic -shared  -o $@ $+ 
 loopd: libclassloops.so
 
 %.o: %.c Numclass.h
