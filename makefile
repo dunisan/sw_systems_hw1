@@ -13,10 +13,10 @@ mains: main.o libclassrec.a
 	$(CC) $(FLAGS) -o $@ $< libclassrec.a -lm
 	
 maindloop: main.o libclassloops.so
-	$(CC) $(FLAGS) main.o ./libclassloops.so -o maindloop   -lm
+	$(CC) $(FLAGS) main.o ./libclassloops.so -o maindloop   
 	
 maindrec: main.o libclassrec.so
-	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so -lm
+	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so 
 
 libclassloops.a: $(LOOP_SOURCES)
 	ar rcs $@ $+
@@ -29,11 +29,11 @@ libclassrec.a: $(REC_SOURCES)
 recursives: libclassrec.a
 
 libclassrec.so: $(REC_SOURCES)
-	$(CC) -fPIC -shared  -o $@ $+
+	$(CC)  -shared -fPIC -o $@ $+ -lm
 recursived: libclassrec.so
 
 libclassloops.so:$(LOOP_SOURCES)
-	$(CC) -fPic -shared  -o $@ $+ 
+	$(CC)  -shared -fPic -o $@ $+ -lm
 loopd: libclassloops.so
 
 %.o: %.c Numclass.h
