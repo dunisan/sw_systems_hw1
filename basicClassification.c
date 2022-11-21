@@ -1,7 +1,7 @@
 #include "NumClass.h"
 
 
-
+//isStrong basic function.
 int isStrong(int num){
     int temp = num; 
     int add; 
@@ -19,7 +19,7 @@ int isStrong(int num){
         return 0; 
 }
 
-
+//isPrime function 
 int isPrime(int num){
 
     int i=0;
@@ -31,7 +31,7 @@ int isPrime(int num){
     }
     return 1; 
 }
-
+//Side function for isStrong
 int factorial(int num) {
    int fact = 1;
    while(num>1) {
